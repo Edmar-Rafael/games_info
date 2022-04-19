@@ -36,5 +36,4 @@ export function mapIconStores(slug){
   }
 
   return <FontAwesomeIcon icon={icon} size={'2x'} color={'white'} />
-
 }

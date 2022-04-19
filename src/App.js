@@ -1,8 +1,12 @@
-import Container from './components/Container'
+import { BrowserRouter } from 'react-router-dom';
+import MyRoutes from './myRoutes';
 
 function App() {
+  
   return (
-    <Container/>
+    <BrowserRouter>
+      <MyRoutes/>
+    </BrowserRouter>
   );
 }
 

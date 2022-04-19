@@ -26,5 +26,21 @@ button:focus {
     outline: none;
 }
 
-
+.ReactModal__Overlay{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all .5s;
+  z-index: 99;
+}
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+  transform: translateY(0px);
+}
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+  transform: translateX(100px);
+}
+.ReactModal__Body--open {
+  overflow: hidden;
+}
 
