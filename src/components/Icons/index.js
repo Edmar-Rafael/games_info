@@ -4,7 +4,11 @@ import { IconContainer } from './styles'
 function Icons({icon, ...props}) {
 
   return (
-    <IconContainer icon={icon} {...props}/>
+    <IconContainer
+      className={props.back_home ? 'back_home' : ''} 
+      icon={icon} 
+      {...props}
+    />
   )
 }
 

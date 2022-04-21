@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import arrow from '../../images/arrow.png'
+import Colors from '../../resources/Colors'
 
 export const PlatformFont = styled.div`
-  font-family:'Noto Sans';
-  font-size:15px;
-  color:white;  
+  font-family: 'Noto Sans';
+  font-size: 15px;
+  color: ${Colors.drop.font};  
 `
 export const Platform = styled.div`
   display: flex;
@@ -14,11 +15,11 @@ export const Platform = styled.div`
   cursor: ${({hasPlatforms}) => hasPlatforms ? 'initial' : 'pointer'};
 `
 export const SelectArrow = styled.div`
-  background-image:url(${arrow});
+  background-image: url(${arrow});
   width: ${({rotate}) => rotate ? 10 : 14}px;
   height: ${({rotate}) => rotate ? 5 : 6}px;  
   background-position: center;
   background-size: cover;
-  z-index:99;
+  z-index: 99;
   transform: ${({rotate}) => `rotate(${rotate ? '-90deg' : 0})`};
 `

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Colors from '../../resources/Colors';
 
 export const CustomModal = styled(Modal)`
   top: 50%;
@@ -12,7 +12,7 @@ export const CustomModal = styled(Modal)`
   transform: translate(-50%, -50%);
   position: relative;
   width: 600px;
-  background: #161618;
+  background: ${Colors.drop_background};
   border-radius: 20px;
   padding: 50px;
 `
@@ -26,7 +26,7 @@ export const Description = styled.span`
   font-family: 'Noto Sans';
   font-style: normal;
   font-size: 16px;
-  color: #FFFFFF;
+  color: ${Colors.font};
   margin-top: 34px;
   margin-right: 48px;
 `

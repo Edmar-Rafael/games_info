@@ -1,4 +1,3 @@
-export { default as BackHome } from './BackHome'
 export { default as BoxVideo } from  './BoxVideo'
 export { default as Container } from './Container'
 export { default as Drop } from './Drop'

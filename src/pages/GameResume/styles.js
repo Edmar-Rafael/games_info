@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Colors from "../../resources/Colors";
 
 export const BoxResume = styled.div`
   display: flex;
@@ -16,13 +17,13 @@ export const BoxZ = styled.div`
   width: 90%;
   height: 90%;
   padding: 46px 54px;
-  background-color: #000000dd;
+  background-color: ${Colors.box_z};
 `
 
 export const Title = styled.span`
   font-family: 'Noto Sans';
   font-size: 36px;
-  color: white;
+  color: ${Colors.font};
 `
 
 export const DateBox = styled.div`
@@ -30,14 +31,14 @@ export const DateBox = styled.div`
   justify-content: center;
   padding: 4px 0;
   width: 13%;
-  background: #333333;
+  background: ${Colors.date_box};
   border-radius: 5px;
 `
 
 export const DateRelease = styled.span`
   font-family: 'Noto Sans';
   font-size: 16px;
-  color: white;
+  color: ${Colors.font};
   font-weight: 300;
   `
 
@@ -67,7 +68,7 @@ export const Playtime = styled.div`
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  color: #FFFFFF;
+  color: ${Colors.font};
 `
 
 export const AboutResume = styled.span`
@@ -75,7 +76,7 @@ export const AboutResume = styled.span`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color: #FFFFFF;
+  color: ${Colors.font};
 `
 
 export const Resume = styled.div`
@@ -83,7 +84,7 @@ export const Resume = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  color: #FFFFFF;
+  color: ${Colors.font};
 `
 
 export const ResumeBox = styled.div`
@@ -114,7 +115,7 @@ export const LinkOfficial = styled.span`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  color: white;
+  color: ${Colors.font};
   cursor: pointer;
   margin-bottom: 5px;
   display: flex;
@@ -125,7 +126,7 @@ export const LinkOfficial = styled.span`
 export const RedditIcon = styled.div`
   width: 20px;
   height: 20px;
-  color: white;
+  color: ${Colors.font};
   background-position: center;
   background-size: cover;
   cursor: pointer;
@@ -136,7 +137,7 @@ export const LinkReddit = styled.span`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  color: white;
+  color: ${Colors.font};
   cursor: pointer;
   margin-left: 8px;
 `

@@ -15,7 +15,7 @@ const Drop = ({ selectedPlatform, setSelectedPlatform }) => {
       setPlatforms(response.data)
     }
     fetchPlatforms()
-  },[])
+  }, [])
   
 
   return (

@@ -1,17 +1,18 @@
 import styled from "styled-components"
+import Colors from "../../resources/Colors"
 
 export const BigBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 80%;
-  background-color: #1E2127;
+  background-color: ${Colors.background};
   border-radius: 50px;
 `
 
 export const Title = styled.p`
   font-family: 'Joystix';
-  color: #FFFFFF;
+  color: ${Colors.font};
   font-size: 32px;
 `
 
@@ -19,7 +20,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 40px;
-  border-bottom: .5px solid #34373c;
+  border-bottom: .5px solid ${Colors.border_bottom};
 `
 
 export const GameView = styled.div`

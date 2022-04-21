@@ -4,9 +4,9 @@ import { mapPlatforms } from '../../utils'
 import { getGameById } from '../../services/games'
 import reddit from '../../images/reddit.png'
 import { 
-  BackHome,
   BoxVideo, 
   Container, 
+  Icons, 
   LinkStore, 
   LoaderS, 
   MetaCritic, 
@@ -34,7 +34,8 @@ import {
   StoreWraper, 
   Title 
 } from './styles'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 function GameResume() {
@@ -43,6 +44,7 @@ function GameResume() {
   const [loading, setLoading] = useState(false)
 
   const params = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchGames() {
@@ -63,7 +65,7 @@ function GameResume() {
       ) : (
       <BoxResume image={game.background_image}>
         <BoxZ>
-          <BackHome/>
+          <Icons onClick={() => navigate('/')} icon={faArrowLeft} back_home/>
           <Row>
             <Title>{game.name}</Title>
             { game.released && 

@@ -1,26 +1,26 @@
 import styled from 'styled-components';
+import Colors from '../../resources/Colors';
 
 export const PlatformFont = styled.div`
-  font-family:'Noto Sans';
-  font-size:15px;
-  color:white;
-  margin: 10px 0;
+  font-family: 'Noto Sans';
+  font-size: 15px;
+  color: ${Colors.drop.font};
+  padding: 10px 0;
   cursor: pointer;
-
 `
 export const Options = styled.div`
   padding: 26px;
   display: ${({show}) => show ? 'block' : 'none'};
   position: relative;
   float: right;
-  background-color: #161618;
+  background-color: ${Colors.drop.background};
   width: 175px;
   font-family: 'Noto Sans';
   border-radius: 20px;
-  color:white;
+  color: ${Colors.drop.font};
   left: 200px;
   top: -50px;
-  z-index:999;
-  border: 1px solid #333333;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  border: 1px solid ${Colors.drop.border};
+  box-shadow: ${Colors.drop.box_shadow};
 `

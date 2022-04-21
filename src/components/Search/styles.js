@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Colors from '../../resources/Colors'
 
 export const SearchContainer = styled.div`
   display: flex;
@@ -8,15 +9,14 @@ export const SearchContainer = styled.div`
 `
 
 export const SearchInput = styled.input`
-  color: #FFFFFF;
-  background-color: #161618;
+  background-color: ${Colors.search.background};
   font-family: 'Noto Sans';
-  border: 2px solid #ffffff55;
+  border: 2px solid ${Colors.search.border};
   border-radius: 30px;
   width: 99%;
   padding: 10px 30px;
   font-size: 20px;
-  color: white;
+  color: ${Colors.search.font};
   transition: all .3s;
 
   &:hover{
@@ -30,7 +30,7 @@ export const SearchInput = styled.input`
   &:focus + label, :not(:placeholder-shown) + label {
     font-size: 16px;
     font-weight: 900;
-    color: white;
+    color: ${Colors.floating_label.focus_font};
     width: fit-content;
     height: fit-content;
     padding: 0 5px;
@@ -46,13 +46,13 @@ export const FloatingLabel = styled.label`
   max-width: 99%;
   padding: 0 4px 2px 4px;
   margin-left: 11px;
-  color: #ffffff55;
+  color: ${Colors.floating_label.font};
   font-family: 'Noto Sans';
   text-align: start;
   transform-origin: 0 0;
   transform: translate(22px, -39px);
   transition: all .3s;
-  background-color: #161618;
+  background-color: ${Colors.floating_label.background};
   z-index: 9;
   pointer-events: none;
 `
