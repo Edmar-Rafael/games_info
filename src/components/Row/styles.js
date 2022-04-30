@@ -8,4 +8,8 @@ export const RowContainer = styled.div`
   width: 100%;
   padding-top: ${({pad0}) => pad0 ? 0 : 19}px;
   padding-bottom: 19px;
+
+  @media(max-width: 500px) {
+    flex-wrap: wrap;
+  }
 `

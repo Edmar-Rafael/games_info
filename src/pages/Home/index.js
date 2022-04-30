@@ -10,19 +10,6 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPlatform, setSelectedPlatform] = useState({})
 
-  const handleChange = event => {
-    setSearchTerm(event.target.value)
-    setPage(1);
-  }
-
-  const scrollToTop= (num)=>{
-    setPage(page + num)
-    window.scroll({
-      top:0,
-      behavior:'smooth'
-    })
-  }
-
   useEffect(() => {
     async function fetchGames() {
       setLoading(true)
@@ -35,6 +22,19 @@ function Home() {
     }
       fetchGames()
   },[page, searchTerm, selectedPlatform])
+
+  const handleChange = event => {
+    setSearchTerm(event.target.value)
+    setPage(1);
+  }
+
+  const scrollToTop= (num)=>{
+    setPage(page + num)
+    window.scroll({
+      top:0,
+      behavior:'smooth'
+    })
+  }
 
 
   return (

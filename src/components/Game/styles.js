@@ -11,9 +11,19 @@ export const GameContainer = styled.div`
   width: 70%;
   padding: 30px 150px;
   cursor: pointer;
+
+  @media(max-width: 800px) {
+    padding: 20px 45px;
+  }
+
+  @media(max-width: 500px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 35px;
+  }
 `
 
-export const ImgGame = styled.div`
+export const ImgGame = styled.img`
   background: ${({ image }) => `url(${image})`};
   min-width: 33.5%;
   min-height: 210px;
@@ -23,6 +33,20 @@ export const ImgGame = styled.div`
   background-position: center;
   background-size: cover;
   border: 10px solid ${Colors.game.border};
+
+  @media(max-width: 800px) {
+    min-width: 40%;
+    max-width: 40%;
+    min-height: 150px;
+    max-height: 150px;
+  }
+
+  @media(max-width: 500px) {
+    min-width: 60%;
+    max-width: 60%;
+    min-height: 100px;
+    max-height: 100px;
+  }
 `
 
 export const InfoContainer = styled.div`

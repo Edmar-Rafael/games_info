@@ -1,36 +1,43 @@
-import React from 'react';
-import InnerSelect from '../InnerSelect';
-import { Platform, PlatformFont, SelectArrow } from './styles';
+import React, { useState } from 'react';
+import Separator from '../Separator';
+import { InnerOptions, Platform, PlatformFont, SelectArrow, SubDropContainer } from './styles';
 
 
-function SubDrop({ platform, isShowing, toggleIsShowing, setSelectedPlatform }) {
-  
-  const hasPlatforms = platform.platforms.length > 1
+function SubDrop({ item, setSelectedPlatform }) {
+  const [parents, setParents] = useState([])
 
-  function onMouseOver() {
-      toggleIsShowing(platform)
+  const hasPlatforms = item.platforms.length > 1
+
+  function showParents() {
+    setParents(item)
   }
-
+  
   
   return (
     <>
       <Platform 
+        onClick={() => hasPlatforms ? false : setSelectedPlatform(item.platforms[0])}
         hasPlatforms={hasPlatforms} 
-        onClick={() => hasPlatforms ? false : setSelectedPlatform(platform.platforms[0])}
-        onMouseOver={() => hasPlatforms ? onMouseOver() : false}
+        onMouseOver={() => hasPlatforms ? showParents() : false}
+        
       >         
-        <PlatformFont value={platform.id}>{platform.name}</PlatformFont>
+        <PlatformFont onMouseLeave={() => setParents('')}>{item.name}</PlatformFont>
         { hasPlatforms && 
-          <SelectArrow rotate='true'/> 
-        }                                
+          <SelectArrow rotate='true'/>
+        } 
       </Platform>
-      <InnerSelect
-        setSelectedPlatform={setSelectedPlatform}
-        showInner={platform.id === isShowing.id} 
-        onMouseOut={()=> toggleIsShowing(false)}
-        platforms={platform.platforms}
-      />
-    </>
+      <Separator y={20}/>
+      <InnerOptions showInner={item.id === parents.id}>
+      { item.platforms && item.platforms.map(parent => 
+        <PlatformFont 
+          onClick={() => setSelectedPlatform(parent)} 
+          key={parent.id}
+        >
+          {parent.name}
+        </PlatformFont>
+      )}
+      </InnerOptions>
+  </>
   )
 }
 

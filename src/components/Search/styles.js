@@ -6,6 +6,15 @@ export const SearchContainer = styled.div`
   flex-wrap: wrap;
   width: 40%;
   border-radius: 30px;
+  padding: 5px 0 0 0;
+
+  @media(max-width: 800px) {
+    width: 50%;
+  }
+
+  @media(max-width: 500px) {
+    width: 90%;
+  }
 `
 
 export const SearchInput = styled.input`
@@ -14,7 +23,7 @@ export const SearchInput = styled.input`
   border: 2px solid ${Colors.search.border};
   border-radius: 30px;
   width: 99%;
-  padding: 10px 30px;
+  padding: 10px 34px;
   font-size: 20px;
   color: ${Colors.search.font};
   transition: all .3s;
@@ -34,25 +43,32 @@ export const SearchInput = styled.input`
     width: fit-content;
     height: fit-content;
     padding: 0 5px;
-    transform: translate(10px, -60px) scale(.82) ;
+    transform: translate(23px, -60px) scale(.82) ;
+  }
+
+  @media(max-width: 800px) {
+    font-size: 15px;
   }
 `
 
 export const FloatingLabel = styled.label`
-  display: flex;
   font-size: 18px;
   font-weight: 100;
   width: 70%;
   max-width: 99%;
-  padding: 0 4px 2px 4px;
-  margin-left: 11px;
+  padding: 0 4px 0 4px;
   color: ${Colors.floating_label.font};
+  background-color: ${Colors.floating_label.background};
   font-family: 'Noto Sans';
   text-align: start;
   transform-origin: 0 0;
-  transform: translate(22px, -39px);
+  transform: translate(35px, -39px);
   transition: all .3s;
-  background-color: ${Colors.floating_label.background};
   z-index: 9;
   pointer-events: none;
+
+  @media(max-width: 800px) {
+    font-size: 14px;
+    transform: translate(35px, -32px);
+  }
 `

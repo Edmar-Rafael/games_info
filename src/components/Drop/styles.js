@@ -17,7 +17,8 @@ export const Select = styled.div`
 
 export const Options = styled.div`
   padding: 26px;
-  display: ${({show}) => show ? 'block' : 'none'};
+  pointer-events: ${({show}) => show ? 'visible' : 'none'};
+  opacity: ${({show}) => show ? 1 : 0};
   position: absolute;
   background-color: ${Colors.drop.background};
   width: 175px;
@@ -28,6 +29,7 @@ export const Options = styled.div`
   z-index: 2;
   top: 20px;
   left: 0;
+  transition: all .3s;
 `
 
 export const SelectArrow = styled.div`

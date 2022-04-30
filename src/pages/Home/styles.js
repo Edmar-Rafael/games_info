@@ -14,6 +14,10 @@ export const Title = styled.p`
   font-family: 'Joystix';
   color: ${Colors.font};
   font-size: 32px;
+
+  @media(max-width: 800px) {
+    font-size: 25px;
+  }
 `
 
 export const HeaderContainer = styled.div`

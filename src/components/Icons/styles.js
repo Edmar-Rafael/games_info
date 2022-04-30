@@ -4,7 +4,7 @@ import Colors from '../../resources/Colors'
 
 export const IconContainer = styled(FontAwesomeIcon)`
   font-size: 15px;
-  color: ${Colors.drop_select_font};
+  color: ${Colors.font};
   position: absolute;
   transition: all .3s;
   transform: translate(15px, 18px);
@@ -15,5 +15,9 @@ export const IconContainer = styled(FontAwesomeIcon)`
     transform: translate(0, 0);
     cursor: pointer;
     position: unset;
+  }
+
+  @media(max-width: 800px) {
+    transform: translate(15px, 15px);
   }
 `

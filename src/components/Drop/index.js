@@ -5,8 +5,7 @@ import { Options, Select, SelectArrow, TitleSelect } from './styles'
 
 
 const Drop = ({ selectedPlatform, setSelectedPlatform }) => {
-  const [show, toggleShow] = useState(false)
-  const [isShowing, toggleIsShowing] = useState(false)  
+  const [show, toggleShow] = useState(false)  
   const [platforms, setPlatforms] = useState({})
 
   useEffect(()=> {
@@ -25,15 +24,13 @@ const Drop = ({ selectedPlatform, setSelectedPlatform }) => {
         <SelectArrow/>
       </TitleSelect>
       <Options show={show}>
-      { platforms.results && platforms.results.map((platform, index) => (
-        <SubDrop 
-          key={index} 
-          platform={platform}
-          isShowing={isShowing}
+      { platforms.results && platforms.results.map(platform => 
+        <SubDrop
+          key={platform.id}
+          item={platform}
           setSelectedPlatform={setSelectedPlatform}
-          toggleIsShowing={toggleIsShowing} 
-        />
-      ))}
+        ></SubDrop>
+      )}
       </Options>            
     </Select>
   )

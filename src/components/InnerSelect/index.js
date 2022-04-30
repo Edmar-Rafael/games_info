@@ -1,11 +1,11 @@
 import React from 'react';
-import { Options, PlatformFont } from './styles';
+import { InnerOptions, PlatformFont } from './styles';
 
 
 function InnerSelect({showInner, onMouseOut, platforms, setSelectedPlatform}) {
   
   return (
-    <Options show={showInner} onMouseLeave={onMouseOut}>
+    <InnerOptions show={showInner} onMouseLeave={onMouseOut}>
     { platforms.map((platform, index) => 
       <PlatformFont 
         onClick={() => setSelectedPlatform(platform)} 
@@ -15,7 +15,7 @@ function InnerSelect({showInner, onMouseOut, platforms, setSelectedPlatform}) {
         {platform.name}
       </PlatformFont>
     )}
-    </Options>
+    </InnerOptions>
   )
 }
 

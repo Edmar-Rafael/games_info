@@ -8,7 +8,7 @@ export const PlatformFont = styled.div`
   padding: 10px 0;
   cursor: pointer;
 `
-export const Options = styled.div`
+export const InnerOptions = styled.div`
   padding: 26px;
   display: ${({show}) => show ? 'block' : 'none'};
   position: relative;

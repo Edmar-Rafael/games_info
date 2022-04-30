@@ -12,7 +12,7 @@ function Search(props) {
       <SearchInput placeholder={'Search'} {...props} />
       <FloatingLabel>Search</FloatingLabel>
       <Icons icon={faSearch} />
-      <Separator y={26}/>
+      <Separator y={24}/>
     </SearchContainer>
   );
 }
