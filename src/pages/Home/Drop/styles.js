@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import arrow from '../../images/arrow.png'
-import Colors from '../../resources/Colors'
+import arrow from '../../../images/arrow.png'
+import Colors from '../../../resources/Colors'
 
 export const Select = styled.div`
   display: flex;

@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from "react";
 import { getGames } from "../../services/games";
-import { Container, Drop, Game, Row, Search, Separator, SkeletonLoading, SwitchPages } from '../../components'
+import { Container, Row, Search, Separator, SkeletonLoading, SwitchPages } from '../../components'
 import { BigBox, HeaderContainer, SwitchBorder, Title } from './styles'
+import Game from "./Game";
+import Drop from "./Drop";
 
 function Home() {
   const [games, setGames] = useState({})

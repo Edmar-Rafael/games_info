@@ -2,15 +2,18 @@ import styled from 'styled-components'
 import Colors from '../../resources/Colors'
 
 export const LinkHolder = styled.div`
-  background-color: ${Colors.date_box};
-  border-radius: 10px;
-  padding: 20px 10px;
-  margin: 0px 45px 20px 0px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 180px;
+  justify-content: space-between;
+  width: 37%;
+  background-color: ${Colors.date_box};
+  border-radius: 10px;
+  padding: 20px 20px 20px 10px;
   cursor: pointer;
+
+  @media(max-width: 800px) {
+    padding: 12px 12px 12px 7px;
+  }
 `
 
 export const StoreTitle = styled.span`
@@ -18,8 +21,9 @@ export const StoreTitle = styled.span`
   font-size: 14px;
   color: ${Colors.drop.select_font};
   text-align: center;
+
+  @media(max-width: 800px) {
+    font-size: 10px;
+  }
 `
-export const StoreIcon = styled.div`
-  width: 30px;
-  height: 30px;
-`
+export const StoreIcon = styled.div``

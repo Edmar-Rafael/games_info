@@ -1,6 +1,5 @@
 import React from 'react';
 import dayjs from 'dayjs'
-import MetaCritic from '../MetaCritic'
 import { 
   Anchor,
   GameContainer,
@@ -11,6 +10,7 @@ import {
   InfoContainer, 
   LineContainer 
 } from './styles';
+import { MetaCritic } from '../../../components';
 
 
 function Game({ item, isLast }) {

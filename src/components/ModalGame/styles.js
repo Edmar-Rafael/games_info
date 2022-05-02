@@ -1,25 +1,27 @@
 import styled from 'styled-components'
 import Modal from 'react-modal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Colors from '../../resources/Colors';
 
 export const CustomModal = styled(Modal)`
-  top: 50%;
-  left: 50%;
   right: auto;
   bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(50%, 20%);
   position: relative;
-  width: 600px;
-  background: ${Colors.drop_background};
+  width: 45%;
   border-radius: 20px;
   padding: 50px;
+
+  @media(max-width: 800px) {
+    width: 80%;
+    padding: 20px;
+    transform: translate(10%, 10%);
+  }
 `
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  background: ${Colors.drop.background};  
 `
 
 export const Description = styled.span`
@@ -27,14 +29,8 @@ export const Description = styled.span`
   font-style: normal;
   font-size: 16px;
   color: ${Colors.font};
-  margin-top: 34px;
-  margin-right: 48px;
-`
 
-export const Icon = styled(FontAwesomeIcon)`
-  display: flex;
-  align-self: flex-end;
-  font-size: 15px;
-  color: white;
-  cursor: pointer;
+  @media(max-width: 800px) {
+    font-size: 14px;
+  }
 `

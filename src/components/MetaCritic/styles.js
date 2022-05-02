@@ -12,6 +12,11 @@ export const MetacriticImg = styled.div`
   height: 32px;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media(max-width: 800px) {
+    width: 23px;
+    height: 23px;
+  }
 `
 export const MetacriticScore = styled.div`
   width: 40px;
@@ -26,5 +31,10 @@ export const MetacriticScore = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 12px;
+
+  @media(max-width: 800px) {
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+  }
 `

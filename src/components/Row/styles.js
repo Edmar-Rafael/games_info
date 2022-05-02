@@ -12,4 +12,9 @@ export const RowContainer = styled.div`
   @media(max-width: 500px) {
     flex-wrap: wrap;
   }
+
+  @media(max-width: 800px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 `

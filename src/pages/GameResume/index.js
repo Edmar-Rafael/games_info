@@ -39,7 +39,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 function GameResume() {
-  const [game, setGame] = useState({})
+  const [gameById, setGameById] = useState({})
   const [showAbout, setShowAbout] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -50,7 +50,7 @@ function GameResume() {
     async function fetchGames() {
       setLoading(true)
       const response = await getGameById(params.id)
-      setGame(response.data)
+      setGameById(response.data)
       setLoading(false)
     }
     fetchGames()
@@ -63,80 +63,86 @@ function GameResume() {
       {loading ? (
       <LoaderS/>
       ) : (
-      <BoxResume image={game.background_image}>
+      <BoxResume image={gameById.background_image}>
         <BoxZ>
-          <Icons onClick={() => navigate('/')} icon={faArrowLeft} back_home/>
           <Row>
-            <Title>{game.name}</Title>
-            { game.released && 
+            <Icons onClick={() => navigate('/')} icon={faArrowLeft} back_home='true'/>
+          </Row>
+          <Row>
+            <Title>{gameById.name}</Title>
+            { gameById.released && 
               <DateBox>
-                <DateRelease>{dayjs(game.released).format('MMM DD, YYYY')}</DateRelease>
+                <DateRelease>{dayjs(gameById.released).format('MMM DD, YYYY')}</DateRelease>
               </DateBox>
             }
           </Row>
           <Row>
             <PlatformsContainer>
-            { game.parent_platforms && game.parent_platforms.map((parent) => 
+            { gameById.parent_platforms && gameById.parent_platforms.map((parent) => 
               <PlatformIcon key={parent.platform.id}>
-                { mapPlatforms(parent.platform.slug) }
+                { mapPlatforms(parent.platform.slug, 'game_resume_platforms') }
               </PlatformIcon>
             )}
             </PlatformsContainer>
-            <MetaCritic item={game}/>
+            <MetaCritic item={gameById}/>
           </Row>
           <Row>
             <PlatformsContainer>
-            { game.publishers && game.publishers.length > 0 && (
+            { gameById.publishers && gameById.publishers.length > 0 && (
               <>
                 <GamePublishers >
                   <AboutText>
                     Publishers: 
                   </AboutText>
                 </GamePublishers>    
-                { game.publishers.map((publisher, index) => (
+                { gameById.publishers.map((publisher, index) => (
                   <GamePublishers key={publisher.id} >
                     <AboutText>
-                      {publisher.name} {game.publishers.length-1 === index ? '' : ', '}
+                      {publisher.name} {gameById.publishers.length-1 === index ? '' : ', '}
                     </AboutText>  
                   </GamePublishers>
                 ))} 
               </>
             )}          
             </PlatformsContainer>
-            { game.playtime !== 0 && 
-              <Playtime>{'Playtime: '}{game.playtime}{'h'}</Playtime>
+            { gameById.playtime !== 0 && 
+              <Playtime>{'Playtime: '}{gameById.playtime}{'h'}</Playtime>
             }
           </Row>
-          { game.description_raw && <AboutResume>{'About'}</AboutResume>}
+          { gameById.description_raw && <AboutResume>{'About'}</AboutResume>}
           <Row>
             <ResumeBox onClick={()=> setShowAbout(!showAbout)}>
-              <Resume>{game.description_raw}</Resume>          
+              <Resume>{gameById.description_raw}</Resume>          
             </ResumeBox>
-            <BoxVideo game={game}/>
+            <BoxVideo gameById={gameById}/>
           </Row>
           <Row pad0>
             <StoreWraper>
-            { game.stores && game.stores.map((item, index) => 
-              <LinkStore key={index} store={item.store} url={item.url}/>
+            { gameById.stores && gameById.stores.map((storeId, index) => 
+              <LinkStore 
+                key={index} 
+                storeId={storeId.store} 
+                url={storeId.url}
+              />
             )}
             </StoreWraper>
             <RedditLinkOfficial>
-            { game.website && 
-              <LinkOfficial onClick={() => window.open(game.website , "_blank")}>
+            { gameById.website && 
+              <LinkOfficial onClick={() => window.open(gameById.website , "_blank")}>
                 Official Website
               </LinkOfficial>
             }
-            { game.reddit_name &&
-              <Row onClick={() => window.open(game.reddit_url , "_blank")}>
+            { gameById.reddit_name &&
+              <Row onClick={() => window.open(gameById.reddit_url , "_blank")}>
                 <RedditIcon src={reddit}/>
-                <LinkReddit>{game.reddit_name}</LinkReddit>
+                <LinkReddit>{gameById.reddit_name}</LinkReddit>
               </Row>
             }
             </RedditLinkOfficial>
           </Row>
         </BoxZ>
         <ModalGame 
-          description={game.description_raw} 
+          description={gameById.description_raw} 
           showModal={showAbout} 
           setShowAbout={setShowAbout}
         />

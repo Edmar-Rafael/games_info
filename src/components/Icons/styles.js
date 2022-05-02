@@ -14,7 +14,28 @@ export const IconContainer = styled(FontAwesomeIcon)`
     font-size: 45px;
     transform: translate(0, 0);
     cursor: pointer;
-    position: unset;
+
+    @media(max-width: 800px) {
+      font-size: 30px;
+    }
+  }
+
+  &.game_resume_platforms{
+    font-size: 40px;
+    position: initial;
+    transform: translate(0, 0);
+
+    @media(max-width: 800px) {
+      font-size: 30px;
+    }
+  }
+
+  &.modal_style{
+    display: flex;
+    align-self: flex-end;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
   }
 
   @media(max-width: 800px) {

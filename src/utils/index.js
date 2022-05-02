@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Icons } from '../components'
 import {
   faWindows,
   faPlaystation,
@@ -9,7 +9,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 
-export function mapPlatforms(slug) {
+
+export function mapPlatforms(slug, myClass) {
   let icon = ''
   
   switch(slug) {
@@ -37,5 +38,5 @@ export function mapPlatforms(slug) {
       break
   }
 
-  return <FontAwesomeIcon icon={icon} size={'2x'} color={'white'} />
+  return <Icons icon={icon} className={myClass}/>
 }

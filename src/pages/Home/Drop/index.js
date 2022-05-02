@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import {getPlatforms} from '../../services/platforms'
-import SubDrop from '../SubDrop'
+import {getPlatforms} from '../../../services/platforms'
+import SubDrop from './SubDrop'
 import { Options, Select, SelectArrow, TitleSelect } from './styles'
 
 
@@ -29,7 +29,7 @@ const Drop = ({ selectedPlatform, setSelectedPlatform }) => {
           key={platform.id}
           item={platform}
           setSelectedPlatform={setSelectedPlatform}
-        ></SubDrop>
+        />
       )}
       </Options>            
     </Select>

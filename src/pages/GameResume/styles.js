@@ -12,18 +12,31 @@ export const BoxResume = styled.div`
   background: ${({ image }) => `url(${image}) center no-repeat`};
   background-size: cover;
   overflow: hidden;
+
+  @media(max-width: 800px) {
+    width: 93%;
+    height: 750px;
+  }
 `
 export const BoxZ = styled.div`
   width: 90%;
   height: 90%;
   padding: 46px 54px;
   background-color: ${Colors.box_z};
+
+  @media(max-width: 800px) {
+    padding: 38px 40px;
+  }
 `
 
 export const Title = styled.span`
   font-family: 'Noto Sans';
   font-size: 36px;
   color: ${Colors.font};
+
+  @media(max-width: 800px) {
+    font-size: 25px;
+  }
 `
 
 export const DateBox = styled.div`
@@ -40,16 +53,18 @@ export const DateRelease = styled.span`
   font-size: 16px;
   color: ${Colors.font};
   font-weight: 300;
-  `
+
+  @media(max-width: 800px) {
+    font-size: 11px;
+  }
+`
 
 export const PlatformsContainer = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: row;
 `
 
 export const PlatformIcon = styled.div`
-  display: flex;
-  justify-content: center;
   padding-right: 20px;
 `
 
@@ -57,6 +72,10 @@ export const AboutText = styled.span`
   font-family: 'Noto Sans';
   font-size: 18px;
   color: white;
+
+  @media(max-width: 800px) {
+    font-size: 15px;
+  }
 `
 
 export const GamePublishers= styled.div`
@@ -69,6 +88,10 @@ export const Playtime = styled.div`
   font-weight: 600;
   font-size: 16px;
   color: ${Colors.font};
+
+  @media(max-width: 800px) {
+    font-size: 12px;
+  }
 `
 
 export const AboutResume = styled.span`
@@ -77,6 +100,10 @@ export const AboutResume = styled.span`
   font-weight: bold;
   font-size: 24px;
   color: ${Colors.font};
+
+  @media(max-width: 800px) {
+    font-size: 19px;
+  }
 `
 
 export const Resume = styled.div`
@@ -85,10 +112,13 @@ export const Resume = styled.div`
   font-weight: bold;
   font-size: 16px;
   color: ${Colors.font};
+
+  @media(max-width: 800px) {
+    font-size: 13px;
+  }
 `
 
 export const ResumeBox = styled.div`
-  display: block;
   width: 47.5%;
   max-height: 198px;
   overflow-y: hidden;
@@ -96,11 +126,12 @@ export const ResumeBox = styled.div`
 `
 
 export const StoreWraper = styled.div`
-  width: 47.5%;
-  height: 280px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 47.5%;
+  height: 280px;
 `
 
 export const RedditLinkOfficial = styled.div`
@@ -111,19 +142,20 @@ export const RedditLinkOfficial = styled.div`
 `
 
 export const LinkOfficial = styled.span`
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: ${Colors.font};
-  cursor: pointer;
-  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Noto Sans';
+  font-size: 14px;
+  color: ${Colors.font};
+  cursor: pointer;
+
+  @media(max-width: 800px) {
+    font-size: 12px;
+  }
 `
 
-export const RedditIcon = styled.div`
+export const RedditIcon = styled.img`
   width: 20px;
   height: 20px;
   color: ${Colors.font};
@@ -134,10 +166,12 @@ export const RedditIcon = styled.div`
 
 export const LinkReddit = styled.span`
   font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   color: ${Colors.font};
+  padding-left: 8px;
   cursor: pointer;
-  margin-left: 8px;
+
+  @media(max-width: 800px) {
+    font-size: 12px;
+  }
 `

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Colors from "../../resources/Colors"
+import Colors from "../../../resources/Colors"
 
 export const Anchor = styled.a`
   text-decoration: none;

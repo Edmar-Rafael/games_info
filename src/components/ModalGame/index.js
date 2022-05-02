@@ -1,6 +1,7 @@
 import React from 'react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import { CustomModal, Description, Icon, Wrapper } from './styles';
+import { CustomModal, Description, Wrapper } from './styles';
+import Icons from '../Icons';
 
 
 function ModalGame({description, showModal, setShowAbout}) {
@@ -11,13 +12,17 @@ function ModalGame({description, showModal, setShowAbout}) {
       onRequestClose={() => setShowAbout(false)}
       style={{
         overlay: {
-          background: '#00000077',
+          background: '#000000aa',
           backdropFilter: 'blur(2px)'
         }
       }}     
     >
       <Wrapper>
-        <Icon icon={faTimes} onClick={() => setShowAbout(false)} />
+        <Icons 
+          onClick={() => setShowAbout(false)} 
+          icon={faTimes} 
+          modal_style='true'
+        />
         <Description>{description}</Description>    
       </Wrapper>
     </CustomModal>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Separator from '../Separator';
-import { InnerOptions, Platform, PlatformFont, SelectArrow, SubDropContainer } from './styles';
+import { Separator } from '../../../../components';
+import { InnerOptions, Platform, PlatformFont, SelectArrow } from './styles';
 
 
 function SubDrop({ item, setSelectedPlatform }) {
