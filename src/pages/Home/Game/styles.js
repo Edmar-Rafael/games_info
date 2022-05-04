@@ -13,13 +13,14 @@ export const GameContainer = styled.div`
   cursor: pointer;
 
   @media(max-width: 800px) {
-    padding: 20px 45px;
+    width: 92%;
+    padding: 20px 20px;
   }
 
   @media(max-width: 500px) {
     flex-direction: column;
     justify-content: center;
-    padding: 20px 35px;
+    width: 91%;
   }
 `
 
@@ -44,8 +45,8 @@ export const ImgGame = styled.img`
   @media(max-width: 500px) {
     min-width: 60%;
     max-width: 60%;
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 150px;
+    max-height: 150px;
   }
 `
 

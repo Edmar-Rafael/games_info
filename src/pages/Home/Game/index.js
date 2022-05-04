@@ -32,7 +32,7 @@ function Game({ item, isLast }) {
           }
           { item.released && 
             <GameRelease size={14}>
-              Released date: 
+              {'Released date: '} 
               <GameRelease>{dayjs(item.released).format('MMM DD, YYYY')}</GameRelease>
             </GameRelease>
           }
