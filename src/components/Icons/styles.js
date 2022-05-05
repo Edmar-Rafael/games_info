@@ -16,7 +16,7 @@ export const IconContainer = styled(FontAwesomeIcon)`
     cursor: pointer;
 
     @media(max-width: 800px) {
-      font-size: 30px;
+      font-size: 25px;
     }
   }
 
@@ -35,10 +35,11 @@ export const IconContainer = styled(FontAwesomeIcon)`
     align-self: flex-end;
     font-size: 15px;
     color: white;
+    transform: translate(20px, -20px);
     cursor: pointer;
-  }
 
-  @media(max-width: 800px) {
-    transform: translate(15px, 15px);
+    @media(max-width: 800px) {
+      transform: translate(13px, -10px);
+    }
   }
 `

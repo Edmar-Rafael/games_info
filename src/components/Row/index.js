@@ -4,7 +4,10 @@ import { RowContainer } from './styles'
 function Row({children, ...props}) {
 
   return (
-    <RowContainer {...props}>
+    <RowContainer 
+      className={props.home_header_mobile ? 'home_header_mobile' : ''} 
+      {...props}
+    >
       {children}
     </RowContainer>
   )

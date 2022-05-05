@@ -25,7 +25,13 @@ export const BoxZ = styled.div`
   background-color: ${Colors.box_z};
 
   @media(max-width: 800px) {
-    padding: 38px 40px;
+    width: fit-content;
+    height: fit-content;
+    padding: 25px 25px;
+  }
+
+  @media(max-width: 500px) {
+    padding: 25px 15px;
   }
 `
 
@@ -35,7 +41,7 @@ export const Title = styled.span`
   color: ${Colors.font};
 
   @media(max-width: 800px) {
-    font-size: 25px;
+    font-size: 23px;
   }
 `
 
@@ -46,6 +52,10 @@ export const DateBox = styled.div`
   width: 13%;
   background: ${Colors.date_box};
   border-radius: 5px;
+
+  @media(max-width: 800px) {
+    width: 22%;
+  }
 `
 
 export const DateRelease = styled.span`
@@ -123,6 +133,10 @@ export const ResumeBox = styled.div`
   max-height: 198px;
   overflow-y: hidden;
   cursor: pointer;
+
+  @media(max-width: 800px) {
+    width: 70%;
+  }
 `
 
 export const StoreWraper = styled.div`
@@ -132,6 +146,11 @@ export const StoreWraper = styled.div`
   justify-content: flex-start;
   width: 47.5%;
   height: 280px;
+
+  @media(max-width: 500px) {
+    width: 75%;
+    height: 250px;
+  }
 `
 
 export const RedditLinkOfficial = styled.div`

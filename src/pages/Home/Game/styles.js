@@ -14,7 +14,7 @@ export const GameContainer = styled.div`
 
   @media(max-width: 800px) {
     width: 92%;
-    padding: 20px 20px;
+    padding: 15px 15px;
   }
 
   @media(max-width: 500px) {

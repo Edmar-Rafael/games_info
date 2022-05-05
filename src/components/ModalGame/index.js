@@ -1,6 +1,7 @@
 import React from 'react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { CustomModal, Description, Wrapper } from './styles';
+import { Row } from '../../components'
 import Icons from '../Icons';
 
 
@@ -23,7 +24,7 @@ function ModalGame({description, showModal, setShowAbout}) {
           icon={faTimes} 
           modal_style='true'
         />
-        <Description>{description}</Description>    
+        <Description>{description}</Description>
       </Wrapper>
     </CustomModal>
   );

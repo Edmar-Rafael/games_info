@@ -44,16 +44,15 @@ function Home() {
       <Separator y={50}/>
       <BigBox>
         <HeaderContainer>
-          <Row>
+          <Row home_header_mobile='true'>
             <Title>GAMES_INFO</Title>
             <Search value={searchTerm} onChange={handleChange}/>
           </Row>
-          <Row>
-            <Drop 
-              selectedPlatform={selectedPlatform} 
-              setSelectedPlatform={setSelectedPlatform}
-            />
-          </Row>
+          <Drop 
+            selectedPlatform={selectedPlatform} 
+            setSelectedPlatform={setSelectedPlatform}
+          />
+          <Separator y={10}/>
         </HeaderContainer>
         { loading ? (
           <SkeletonLoading itemSize={10} />                                          

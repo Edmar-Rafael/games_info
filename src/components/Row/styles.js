@@ -9,12 +9,19 @@ export const RowContainer = styled.div`
   padding-top: ${({pad0}) => pad0 ? 0 : 19}px;
   padding-bottom: 19px;
 
-  @media(max-width: 500px) {
-    flex-wrap: wrap;
+  &.home_header_mobile{
+    @media(max-width: 500px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   @media(max-width: 800px) {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  @media(max-width: 500px) {
+    flex-wrap: wrap;
   }
 `
