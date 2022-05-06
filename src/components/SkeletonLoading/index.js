@@ -4,11 +4,11 @@ import { Column, SkeletonImage, SkeletonItem, Wrapper } from './styles';
 
 function SkeletonLoading({ itemSize }) {
 
-  const size = new Array(itemSize || 5).fill(1)
+  const sizes = new Array(itemSize || 5).fill(1)
 
   return (
     <>
-    { size.map((index) => (
+    { sizes.map((size, index) => (
       <Wrapper key={index}>
         <SkeletonImage />
         <Column>

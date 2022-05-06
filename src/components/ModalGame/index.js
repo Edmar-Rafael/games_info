@@ -1,7 +1,6 @@
 import React from 'react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { CustomModal, Description, Wrapper } from './styles';
-import { Row } from '../../components'
 import Icons from '../Icons';
 
 

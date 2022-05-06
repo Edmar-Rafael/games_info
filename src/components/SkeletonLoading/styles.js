@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   margin: 30px auto;
   width: 70%;
   height: 250px;
-  background-color: ${Colors.drop_background};
+  background-color: ${Colors.drop.background};
 `
 
 export const SkeletonImage = styled.div`
