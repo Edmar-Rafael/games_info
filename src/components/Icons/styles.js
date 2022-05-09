@@ -20,16 +20,6 @@ export const IconContainer = styled(FontAwesomeIcon)`
     }
   }
 
-  &.game_resume_platforms{
-    font-size: 40px;
-    position: initial;
-    transform: translate(0, 0);
-
-    @media(max-width: 800px) {
-      font-size: 30px;
-    }
-  }
-
   &.modal_style{
     display: flex;
     align-self: flex-end;
@@ -40,6 +30,26 @@ export const IconContainer = styled(FontAwesomeIcon)`
 
     @media(max-width: 800px) {
       transform: translate(13px, -10px);
+    }
+  }
+
+  &.gameResume_storesIcons{
+    font-size: 30px;
+    position: initial;
+    transform: translate(0, 0);
+
+    @media(max-width: 800px) {
+      font-size: 20px;
+    }
+  }
+
+  &.gameResume_platforms{
+    font-size: 40px;
+    position: initial;
+    transform: translate(0, 0);
+
+    @media(max-width: 800px) {
+      font-size: 30px;
     }
   }
 `

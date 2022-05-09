@@ -80,7 +80,7 @@ function GameResume() {
             <PlatformsContainer>
             { gameById.parent_platforms && gameById.parent_platforms.map((parent) => 
               <PlatformIcon key={parent.platform.id}>
-                { mapPlatforms(parent.platform.slug, 'game_resume_platforms') }
+                { mapPlatforms(parent.platform.slug, 'gameResume_platforms') }
               </PlatformIcon>
             )}
             </PlatformsContainer>

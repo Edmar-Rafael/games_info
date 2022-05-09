@@ -1,5 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Icons } from '../components'
 import {
   faPlaystation,
   faXbox,
@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 
-export function mapIconStores(slug){
+export function mapStoresIcons(slug, myClass){
   let icon =''
   
   switch(slug){
@@ -35,5 +35,5 @@ export function mapIconStores(slug){
 
   }
 
-  return <FontAwesomeIcon icon={icon} size={'2x'} color={'white'} />
+  return <Icons icon={icon} className={myClass}/>
 }

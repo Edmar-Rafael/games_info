@@ -1,5 +1,5 @@
 import React from 'react';
-import {mapIconStores} from '../../utils/storeIcons'
+import {mapStoresIcons} from '../../utils/storeIcons'
 import Separator from '../Separator';
 import { LinkHolder, StoreIcon, StoreTitle } from './styles';
 
@@ -10,7 +10,7 @@ function LinkStore({storeId, url}) {
       <LinkHolder onClick={() => window.open(url, "_blank")} >       
         <StoreTitle>{storeId.name}</StoreTitle>
         <StoreIcon>
-          {mapIconStores(storeId.slug)}
+          {mapStoresIcons(storeId.slug, 'gameResume_storesIcons')}
         </StoreIcon>
       </LinkHolder>
       <Separator y={21}/>
