@@ -7,7 +7,7 @@ export const RowContainer = styled.div`
   flex-direction: row;
   width: 100%;
   padding-top: ${({pad0}) => pad0 ? 0 : 19}px;
-  padding-bottom: 19px;
+  padding-bottom: ${({padB}) => padB ? 0 : 19}px;
 
   &.home_header_mobile{
     @media(max-width: 500px) {

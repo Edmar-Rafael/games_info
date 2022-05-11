@@ -116,7 +116,7 @@ function GameResume() {
             </ResumeBox>
             <BoxVideo gameById={gameById}/>
           </Row>
-          <Row pad0>
+          <Row pad0 padB>
             <StoreWraper>
             { gameById.stores && gameById.stores.map((storeId, index) => 
               <LinkStore 

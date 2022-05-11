@@ -7,7 +7,6 @@ export const BoxResume = styled.div`
   align-items: center;
   justify-content: center;
   width: 85%;
-  height: 900px;
   border-radius: 50px;
   background: ${({ image }) => `url(${image}) center no-repeat`};
   background-size: cover;
@@ -15,7 +14,6 @@ export const BoxResume = styled.div`
 
   @media(max-width: 800px) {
     width: 93%;
-    height: 750px;
   }
 `
 export const BoxZ = styled.div`
@@ -54,7 +52,7 @@ export const DateBox = styled.div`
   border-radius: 5px;
 
   @media(max-width: 800px) {
-    width: 22%;
+    width: 25%;
   }
 `
 
@@ -147,9 +145,12 @@ export const StoreWraper = styled.div`
   width: 47.5%;
   height: 280px;
 
+  @media(max-width: 800px) {
+    height: 210px;
+  }
+
   @media(max-width: 500px) {
     width: 75%;
-    height: 250px;
   }
 `
 

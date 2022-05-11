@@ -1,4 +1,5 @@
 import React from 'react';
+import Row from '../Row';
 import { Column, SkeletonImage, SkeletonItem, Wrapper } from './styles';
 
 
@@ -9,13 +10,13 @@ function SkeletonLoading({ itemSize }) {
   return (
     <>
     { sizes.map((size, index) => (
-      <Wrapper key={index}>
+        <Wrapper key={index}>
         <SkeletonImage />
         <Column>
-          <SkeletonItem width={300} />
-          <SkeletonItem width={350} />
-          <SkeletonItem width={200} />
-          <SkeletonItem width={100} />
+          <SkeletonItem width={80} />
+          <SkeletonItem width={90} />
+          <SkeletonItem width={75} />
+          <SkeletonItem width={70} />
         </Column>
       </Wrapper>
     ))}
