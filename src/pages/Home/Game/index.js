@@ -8,7 +8,8 @@ import {
   GameTitle, 
   ImgGame, 
   InfoContainer, 
-  LineContainer 
+  LineContainer, 
+  PulsingBorder
 } from './styles';
 import { MetaCritic } from '../../../components';
 
@@ -18,7 +19,9 @@ function Game({ item, isLast }) {
   return (
     <Anchor href={`/game/resume/${item.id}`}>
       <GameContainer>
-        <ImgGame image={item.background_image} />
+        <PulsingBorder>
+          <ImgGame image={item.background_image} />
+        </PulsingBorder>
         <InfoContainer>
           <GameTitle>
             {item.name}

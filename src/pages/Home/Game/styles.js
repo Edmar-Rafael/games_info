@@ -24,29 +24,60 @@ export const GameContainer = styled.div`
   }
 `
 
+export const PulsingBorder = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 36%;
+  min-height: 220px;
+  background-color: black;
+  overflow: hidden;
+  z-index: 99;
+
+  ::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: blue;
+
+    animation: pulse 4s infinite;
+  }
+
+  @keyframes pulse{
+    0%{
+      transform: scale(.9);
+      opacity: .9;
+    }
+    100%{
+      transform: scale(1.3);
+      opacity: 0;
+    }
+  }
+
+  @media(max-width: 500px) {
+    min-width: 80%;
+    min-height: 150px;
+  }
+`
+
 export const ImgGame = styled.img`
   background: ${({ image }) => `url(${image})`};
-  min-width: 33.5%;
+  min-width: 95%;
   min-height: 210px;
-  max-width: 33.5%;
+  max-width: 95%;
   max-height: 210px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border: 10px solid ${Colors.game.border};
-
-  @media(max-width: 800px) {
-    min-width: 40%;
-    max-width: 40%;
-    min-height: 150px;
-    max-height: 150px;
-  }
+  z-index: 99;
 
   @media(max-width: 500px) {
-    min-width: 60%;
-    max-width: 60%;
-    min-height: 150px;
-    max-height: 150px;
+    min-width: 95%;
+    max-width: 95%;
+    min-height: 140px;
+    max-height: 140px;
   }
 `
 
