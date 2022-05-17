@@ -1,14 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Icons from '../Icons'
 import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { Switch } from './styles';
 
 
-function SwitchPages({reverse, onClick}) {
+function SwitchPages({reverse, ...props}) {
 
   return (
-    <Switch onClick={onClick}>
-      <FontAwesomeIcon icon={reverse ? faChevronLeft : faChevronRight} size={'3x'} color={'white'} />
+    <Switch {...props}>
+      <Icons icon={reverse ? faChevronLeft : faChevronRight} switch_border='true' />
     </Switch>
   );
 }

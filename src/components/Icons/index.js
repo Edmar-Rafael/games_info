@@ -7,7 +7,8 @@ function Icons({icon, ...props}) {
     <IconContainer
       className={
         props.back_home ? 'back_home' : '' || 
-        props.modal_style ? 'modal_style' : ''
+        props.modal_style ? 'modal_style' : '' ||
+        props.switch_border ? 'switch_border' : ''
       } 
       icon={icon} 
       {...props}

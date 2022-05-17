@@ -45,6 +45,15 @@ export const PulsingBorder = styled.div`
     animation: pulse 4s infinite;
   }
 
+  ::before{
+    content: '';
+    width: 90%;
+    height: 90%;
+    background-color: black;
+    z-index: 9;
+    position: absolute
+  }
+
   @keyframes pulse{
     0%{
       transform: scale(.9);

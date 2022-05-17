@@ -52,4 +52,11 @@ export const IconContainer = styled(FontAwesomeIcon)`
       font-size: 30px;
     }
   }
+
+  &.switch_border{
+    color: white;
+    width: 3.5rem;
+    height: 3.5rem;
+    transform: translate(0, 0);
+  }
 `

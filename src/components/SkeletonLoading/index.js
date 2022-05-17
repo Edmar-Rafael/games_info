@@ -1,5 +1,4 @@
 import React from 'react';
-import Row from '../Row';
 import { Column, SkeletonImage, SkeletonItem, Wrapper } from './styles';
 
 
