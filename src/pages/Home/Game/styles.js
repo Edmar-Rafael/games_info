@@ -33,7 +33,6 @@ export const PulsingBorder = styled.div`
   min-height: 220px;
   background-color: black;
   overflow: hidden;
-  z-index: 99;
 
   ::after{
     content: '';
@@ -50,7 +49,7 @@ export const PulsingBorder = styled.div`
     width: 90%;
     height: 90%;
     background-color: black;
-    z-index: 9;
+    z-index: 1;
     position: absolute
   }
 
@@ -80,7 +79,7 @@ export const ImgGame = styled.img`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: 99;
+  z-index: 9;
 
   @media(max-width: 500px) {
     min-width: 95%;

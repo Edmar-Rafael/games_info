@@ -1,29 +1,25 @@
 import React, { useState, useEffect} from "react";
-import { getGames } from "../../services/games";
-import { Container, Row, Search, Separator, SkeletonLoading, SwitchPages } from '../../components'
+import { Container, Row, Search, Separator, SkeletonLoading, Button, Icons } from '../../components'
 import { BigBox, HeaderContainer, SwitchBorder, Title } from './styles'
 import Game from "./Game";
 import Drop from "./Drop";
+import { requestGamesList } from "../../store/ducks/gamesList";
+import { useDispatch, useSelector } from "react-redux";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
-  const [games, setGames] = useState({})
   const [page, setPage] = useState(1)
-  const [loading, setLoading] = useState(false)
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPlatform, setSelectedPlatform] = useState({})
+  const {data, loading} = useSelector(({gamesListState}) => gamesListState)
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    async function fetchGames() {
-      setLoading(true)
-      const response = await getGames(
-        page, searchTerm, selectedPlatform.id ? 
-        `platforms=${selectedPlatform.id}` : undefined
-      )
-      setGames(response.data)
-      setLoading(false)
-    }
-      fetchGames()
-  },[page, searchTerm, selectedPlatform])
+    dispatch(requestGamesList(
+      page, searchTerm, selectedPlatform.id && `platforms=${selectedPlatform.id}`
+    ))
+  },[dispatch, page, searchTerm, selectedPlatform])
 
   const handleChange = event => {
     setSearchTerm(event.target.value)
@@ -57,23 +53,27 @@ function Home() {
         { loading ? (
           <SkeletonLoading itemSize={10} />                                          
             ) : (
-          games.results && games.results.map((game, index) =>
+          data.results && data.results.map((game, index) =>
             <Game 
               key={game.id} 
               item={game} 
-              isLast={games.results.length - 1 === index} 
+              isLast={data.results.length - 1 === index} 
             />
         ))}
       </BigBox>
       <SwitchBorder>
         <Row>
-        { games.previous ? (
-          <SwitchPages onClick={() => scrollToTop(- 1)} reverse={true} /> 
+        { data.previous ? (
+          <Button onClick={() => scrollToTop(- 1)}>
+            <Icons icon={faChevronLeft} switch_border='true' />
+          </Button>
           ) : (
           <div /> 
         )}
-        { games.next ? (
-          <SwitchPages onClick={() => scrollToTop(1)} reverse={false}/> 
+        { data.next ? (
+          <Button onClick={() => scrollToTop(1)}>
+            <Icons icon={faChevronRight} switch_border='true' />
+          </Button> 
           ) : (
           <div /> 
         )}

@@ -18,7 +18,6 @@ export const BoxResume = styled.div`
 `
 export const BoxZ = styled.div`
   width: 90%;
-  height: 90%;
   padding: 46px 54px;
   background-color: ${Colors.box_z};
 
@@ -142,15 +141,17 @@ export const StoreWraper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 47.5%;
-  height: 280px;
+  width: 50%;
+  height: 240px;
+  row-gap: 21px;
 
   @media(max-width: 800px) {
     height: 210px;
+    row-gap: 15px;
   }
 
   @media(max-width: 500px) {
-    width: 75%;
+    width: 100%;
   }
 `
 

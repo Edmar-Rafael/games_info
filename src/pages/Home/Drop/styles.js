@@ -13,6 +13,7 @@ export const Select = styled.div`
   background-color: ${Colors.drop.background};
   position: relative;
   align-items: center;
+  z-index: 19;
 `
 
 export const Options = styled.div`
@@ -39,7 +40,8 @@ export const SelectArrow = styled.div`
   background-position: center;
   background-size: cover;
   z-index: 99;
-  transform: ${({rotate}) => `rotate(${rotate ? '-90deg' : 0})`};
+  transition: all .3s;
+  transform: ${({rotate, show}) => `rotate(${rotate ? '-90deg' : show ? '-180deg' : 0})`};
 `
 
 export const TitleSelect = styled.div`

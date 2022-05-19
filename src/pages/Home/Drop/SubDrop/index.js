@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Separator } from '../../../../components';
 import { InnerOptions, Platform, PlatformFont, SelectArrow } from './styles';
 
 
-function SubDrop({ item, setSelectedPlatform }) {
-  const [parents, setParents] = useState([])
+function SubDrop({ item, setSelectedPlatform, parents, setParents }) {
 
   const hasPlatforms = item.platforms.length > 1
 
@@ -18,8 +17,7 @@ function SubDrop({ item, setSelectedPlatform }) {
       <Platform 
         onClick={() => hasPlatforms ? false : setSelectedPlatform(item.platforms[0])}
         hasPlatforms={hasPlatforms} 
-        onMouseOver={() => hasPlatforms ? showParents() : false}
-        
+        onMouseOver={() => hasPlatforms && showParents()}
       >         
         <PlatformFont onMouseLeave={() => setParents('')}>{item.name}</PlatformFont>
         { hasPlatforms && 

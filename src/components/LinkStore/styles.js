@@ -5,10 +5,10 @@ export const LinkHolder = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 37%;
+  width: 25%;
   background-color: ${Colors.date_box};
   border-radius: 10px;
-  padding: 20px 20px 20px 10px;
+  padding: 15px 10px 15px 10px;
   cursor: pointer;
 
   @media(max-width: 800px) {

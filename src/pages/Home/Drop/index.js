@@ -1,34 +1,42 @@
 import React, {useEffect, useState} from 'react'
-import {getPlatforms} from '../../../services/platforms'
 import SubDrop from './SubDrop'
-import { Options, Select, SelectArrow, TitleSelect } from './styles'
+import { Options, Select, SelectArrow } from './styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { requestPlatforms } from '../../../store/ducks/platformsList'
+import { Button } from '../../../components'
 
 
 const Drop = ({ selectedPlatform, setSelectedPlatform }) => {
   const [show, toggleShow] = useState(false)  
-  const [platforms, setPlatforms] = useState({})
+  const [parents, setParents] = useState([])
+  const {data} = useSelector(({platformsState}) => platformsState)
+
+  const dispatch = useDispatch()
 
   useEffect(()=> {
-    async function fetchPlatforms() {
-      const response = await getPlatforms()
-      setPlatforms(response.data)
-    }
-    fetchPlatforms()
-  }, [])
+    dispatch(requestPlatforms())
+  }, [dispatch])
+
+  function handleDropClosing() {
+    toggleShow(false)
+    setParents("")
+  }
   
 
   return (
-    <Select onMouseLeave={() => toggleShow(false)}>
-      <TitleSelect onClick={() => toggleShow(!show)}>
+    <Select onMouseLeave={handleDropClosing}>
+      <Button onClick={() => toggleShow(!show)} title_select='true'>
         {selectedPlatform.name || 'Platforms'}
-        <SelectArrow/>
-      </TitleSelect>
+        <SelectArrow show={show}/>
+      </Button>
       <Options show={show}>
-      { platforms.results && platforms.results.map(platform => 
+      { data.results && data.results.map(platform => 
         <SubDrop
           key={platform.id}
           item={platform}
           setSelectedPlatform={setSelectedPlatform}
+          parents={parents}
+          setParents={setParents}
         />
       )}
       </Options>            
