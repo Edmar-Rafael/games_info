@@ -36,7 +36,7 @@ export const PulsingBorder = styled.div`
   justify-content: center;
   position: relative;
   min-width: 38%;
-  min-height: 220px;
+  min-height: 221px;
   background-color: black;
   overflow: hidden;
 
