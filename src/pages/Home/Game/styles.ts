@@ -88,10 +88,10 @@ export const ImgGame = styled.img<Props>`
   z-index: 9;
 
   @media(max-width: 500px) {
-    min-width: 95%;
-    max-width: 95%;
-    min-height: 140px;
-    max-height: 140px;
+    min-width: 94%;
+    max-width: 94%;
+    min-height: 136px;
+    max-height: 136px;
   }
 `
 
